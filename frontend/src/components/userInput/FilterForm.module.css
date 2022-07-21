@@ -1,0 +1,29 @@
+.filters {
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  padding: 25px;
+  margin-top: 10px;
+}
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid rgba(128, 128, 128, 0.329);
+  border-radius: 6px;
+  margin-left: 30px;
+}
+
+.controls {
+  display: flex;
+  margin: 20px;
+}
+
+.checkbox {
+  padding-right: 10px;
+}
+/* input {
+  font: inherit;
+  border-radius: 4px;
+  margin: 21px;
+} */

@@ -1,24 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import MainPage from "./pages/MainPage";
+import AuthPage from "./pages/AuthPage";
+
+import MyPage from "./pages/MyPage";
+import Layout from "./components/layout/Layout";
 
 function App() {
-  const [hello, setHello] = useState('')
-
-    useEffect(() => {
-        fetch('/api/hello')
-        .then(response => response.text())
-        .then((text) => {
-          setHello(text);
-          console.log(text);
-        })
-        .catch(error => console.log(error))
-    }, []);
-
-    return (
-        <div>
-            백엔드에서 가져온 데이터입니다{hello}
-        </div>
-    );
+  return (
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" exact element={<MainPage />} />
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/my-page" element={<MyPage />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
 }
 
 export default App;

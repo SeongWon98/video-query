@@ -1,0 +1,37 @@
+.search {
+  display: flex;
+  background-color: white;
+  justify-items: center;
+  justify-content: space-around;
+  border-radius: 6px;
+  height: 50px;
+  align-items: center;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: rgb(24, 49, 83);
+  color: white;
+  padding: 8px 30px;
+  margin-left: 6px;
+  border: 1px solid rgb(24, 49, 83);
+  border-radius: 4px;
+}
+
+.text input {
+  border: none;
+  height: 30px;
+  width: 400px;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-size: large;
+}
+
+.text input:focus {
+  outline: none;
+}
+
+.icon {
+  color: gray;
+}
