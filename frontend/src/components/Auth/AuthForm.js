@@ -1,9 +1,11 @@
 import { useState, useRef, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import AuthContext from "../../store/auth-context";
 import classes from "./AuthForm.module.css";
 
 const AuthForm = () => {
+  const navigate = useNavigate();
   const usernameInputRef = useRef();
   const passwordInputRef = useRef();
 
@@ -53,8 +55,9 @@ const AuthForm = () => {
           }
         })
         .then((data) => {
-          authCtx.login(data.token);
-          console.log(data.token);
+          console.log(data);
+          authCtx.login(data.token, data.username);
+          navigate("/", { replace: true });
         })
         .catch((err) => {
           alert(err.message);

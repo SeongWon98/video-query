@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { useState } from "react";
 
-import Card from "../components/ui/Card";
+// import Card from "../components/ui/Card";
 // import Modal from "../components/ui/Modal";
 import Backdrop from "../components/ui/Backdrop";
+import AuthContext from "../store/auth-context";
 
 function MyPage(props) {
+  const authCtx = useContext(AuthContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   function deleteHandler() {
@@ -16,8 +19,9 @@ function MyPage(props) {
   }
 
   return (
-    <Card>
-      <h2>{props.text}</h2>
+    <div>
+      {/* <h2>{props.text}</h2> */}
+      <h2>{authCtx.username}</h2>
       <div className="actions">
         <button className="btn" onClick={deleteHandler}>
           +
@@ -25,7 +29,7 @@ function MyPage(props) {
       </div>
       {/* {modalIsOpen && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />} */}
       {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
-    </Card>
+    </div>
   );
 }
 
